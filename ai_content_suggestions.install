@@ -128,3 +128,14 @@ function ai_content_suggestions_update_10005() {
   If you are enable to generate a response, respond with "Insufficient information provided, please add more data before generating suggestions."');
   $config->save(TRUE);
 }
+
+/**
+ * Ensure field_widget_actions module is installed for 2.x branch.
+ *
+ * This is needed for users who installed 1.x after update_10002 existed,
+ * then update to 2.x. Their schema would already be past 10002, so that
+ * hook would be skipped.
+ */
+function ai_content_suggestions_update_20001() {
+  \Drupal::service('module_installer')->install(['field_widget_actions']);
+}
