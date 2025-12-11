@@ -46,7 +46,7 @@ class TestApiEndpointTest extends KernelTestBase {
     // Run the sendChat function.
     $prompt = "Create a detailed summary of the following text in less than 130 words using the same language as the following text:
 
-Monkeys are primates that likes to eat bananas.";
+Monkeys are primates that like to eat bananas.";
     $response = $plugin->sendChat($prompt);
     // Assert that we got the right response.
     $this->assertNotEmpty($response);

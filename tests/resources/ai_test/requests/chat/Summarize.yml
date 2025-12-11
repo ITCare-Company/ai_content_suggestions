@@ -1,7 +1,7 @@
 request:
   messages:
   - role: user
-    text: "Create a detailed summary of the following text in less than 130 words using the same language as the following text:\n\nMonkeys are primates that likes to eat bananas."
+    text: "Create a detailed summary of the following text in less than 130 words using the same language as the following text:\n\nMonkeys are primates that like to eat bananas."
     images: []
     tools: null
     tool_id: null
