@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Component\Utility\DeprecationHelper;
+
 /**
  * @file
  * Contains install/update hooks for ai_content_suggestions module.
@@ -33,7 +35,7 @@ function ai_content_suggestions_update_10001() {
   </ol>
   ```
   If there is too little information to generate a response, respond with "Insufficient information provided, please add more data before generating suggestions."');
-  $config->save(TRUE);
+  DeprecationHelper::backwardsCompatibleCall(\Drupal::VERSION, '11.4.0', fn() => $config->save(), fn() => $config->save(TRUE));
 }
 
 /**
@@ -126,7 +128,7 @@ function ai_content_suggestions_update_10005() {
   ]
   ```
   If you are enable to generate a response, respond with "Insufficient information provided, please add more data before generating suggestions."');
-  $config->save(TRUE);
+  DeprecationHelper::backwardsCompatibleCall(\Drupal::VERSION, '11.4.0', fn() => $config->save(), fn() => $config->save(TRUE));
 }
 
 /**
